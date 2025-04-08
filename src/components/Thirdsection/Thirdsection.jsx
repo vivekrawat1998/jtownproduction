@@ -1,43 +1,57 @@
-import React from 'react'
+import React, { useRef } from "react";
+import {
+    Users,
+    Image,
+    HeartHandshake,
+    Code,
+    Settings,
+    LockKeyhole
+} from "lucide-react";
+import useGsapParallax from "../ui/GsapParallax";
 
 const Thirdsection = () => {
-
     const cardsitems = [
         {
             id: 1,
-            title: "Improved Functionality",
-            icons: "",
-            desc: "Maintain financial stability and avoid unexpected expenses, which can disrupt operations and impact profitability."
+            title: "DETAILED NGO PROFILES",
+            icon: <Users className="w-10 h-10 text-blue-500" />,
+            desc: "Showcase your mission, vision, and impact. Highlight success stories, achievements, and the difference you make in the community."
         },
         {
             id: 2,
-            title: "Competitive Advantage",
-            desc: "Increase revenue, attract top talent, and expand into new markets, leading to sustainable growth and profitability.",
-            icons: ""
+            title: "VIBRANT PHOTOS & GALLERIES",
+            icon: <Image className="w-10 h-10 text-purple-500" />,
+            desc: "Engage your audience with high-quality visuals that tell your NGO's story, inspire action, and create a lasting impact."
         },
         {
             id: 3,
-            title: "Increased Reliability",
-            desc: "Reducing costs by optimizing resource utilization, ultimately leading to increased revenue and long-term success.",
-            icons: ""
+            title: "EASY CONTACT & DONATION",
+            icon: <HeartHandshake className="w-10 h-10 text-green-500" />,
+            desc: "Seamlessly connect with supporters and donors. Make donations effortless with an integrated and secure payment system."
         },
         {
             id: 4,
-            title: "Predictable Spending",
-            desc: "Offer innovative services, improve operational efficiency and gain a competitive edge in the industry.",
-            icons: ""
-        }
-    ]
-
+            title: "CUSTOM CODING",
+            icon: <Code className="w-10 h-10 text-yellow-500" />,
+            desc: "Unique design elements that reflect your NGO’s identity. Get a tailored website with advanced features for maximum engagement."
+        },
+        {
+            id: 5,
+            title: "ADMIN PANEL ACCESS",
+            icon: <Settings className="w-10 h-10 text-red-500 animate-spin" />,
+            desc: "Take full control of your website with a user-friendly dashboard. Easily update content, manage projects, and track donations."
+        },
+        {
+            id: 6,
+            title: "EXCLUSIVE ACCESS",
+            icon: <LockKeyhole className="w-10 h-10 text-teal-500" />,
+            desc: "Gain secure access to premium funding insights and grant opportunities. Stay ahead with timely updates and valuable resources."
+        },
+    ];
 
 
     return (
-        <div className='bg-[#130342] w-full relative'
-        // style={{
-        //     backgroundImage: 'url("/assets/background_02_home_02.jpg")',
-        //     backgroundSize: "cover",
-        //     backgroundPosition: "center",
-        // }}
+        <div className='bg-[#170842] w-full relative'
         >
             <img src='/assets/background_02_home_02.jpg' alt='' className='absolute z-10 w-full h-full object-cover rounded-tr-[250px] rounded-bl-[250px] ' />
             <div className='w-full grid place-items-center relative z-45' >
@@ -49,32 +63,49 @@ const Thirdsection = () => {
                         className='leading-23 mb-10'
                         style={{ fontSize: "clamp(1rem, 5vw, 10rem)" }}
                     >Transform Your Online Presence With Us</h2>
+                    {useGsapParallax({
+                        src: "/assets/floating_image_03-600x609.png",
+                        alt: "Floating Image",
+                        className: "absolute z-10 top-[14vh] left-0 md:block hidden w-[673px] h-[500px]",
+                    })}
+                    {useGsapParallax({
+                        src: "/assets/floating_image_04-320x384.png",
+                        alt: "Floating Image",
+                        className: "absolute z-10 -bottom-[36vh] right-10 md:block hidden w-[20VW]",
+                    })}
                 </div>
-                <div className='grid md:grid-cols-2  grid-cols-1 px-5 md:p-20 gap-20 text-white '>
-                    <img
-                        src="/assets/curvedimage.jpg"
-                        alt="Curved"
-                        className="w-full h-full object-contain rounded-full"
-                        style={{
-                            clipPath: "polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)"
-
-                        }}
-                    />
+                <div className='grid md:grid-cols-2  grid-cols-1 px-5 md:p-10 gap-10 text-white '>
+                    <div className="w-full h-full">
+                        <img
+                            src="/assets/serviceimg.webp"
+                            alt="Curved"
+                            className="w-full h-full object-cover "
+                        />
+                    </div>
                     <div className=''>
                         <h1
-                            style={{ fontSize: "clamp(1rem, 5vw, 2rem)" }}
+                            className='font-bold'
+                            style={{ fontSize: "clamp(1rem, 5vw, 1.6rem)" }}
                         >
-                            We specialize in a wide range of digital services, including web development, app development, e-commerce solutions, and digital marketing.
+                            We specialize in enhancing NGOs' online presence with creative
+                            and impactful websites, ensuring they effectively communicate
+                            their missions and reach their goals.
+
                         </h1>
+                        <br />
                         <h2
                             style={{ fontSize: "clamp(1rem, 5vw, 1.4rem)" }}
-                        >As businesses continue to operate in an increasingly digital landscape, the importance of IT services in driving growth and success cannot be overstated. By leveraging the latest technologies and best practices in IT, businesses can gain a significant competitive edge.</h2>
-                        <div className='grid md:grid-cols-2  grid-cols-1'>
+                        >Ongoing support and guidance for
+                            maximizing online presence.
+                            Offer easy-to-use tools and resources to
+                            connect with audiences and achieve
+                            goals..</h2>
+                        <div className='grid md:grid-cols-2 font-space  grid-cols-1'>
                             {
                                 cardsitems.map((item) => (
-                                    <div key={item.id} className='mt-10'>
-                                        <img src={item.icons} alt='' className='w-30 h-30 object-cover' />
-                                        <h1>{item.title}</h1>
+                                    <div key={item.id} className='mt-10 space-y-3'>
+                                        <div className="animate-bounce w-12 h-12 flex items-center justify-center">{item.icon}</div>
+                                        <h1 className="mt-4 text-yellow-400">{item.title}</h1>
                                         <h2>{item.desc}</h2>
                                     </div>
                                 ))

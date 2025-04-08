@@ -1,46 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GsapParallax from "../ui/GsapParallax";
 import Cards from "../cards/Cards";
+import Button from "../ui/Button";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 const Herosection = () => {
-    const imageRef = useRef(null);
-    const image2Ref = useRef(null);
-    const bgimgRef = useRef(null);
 
-    useEffect(() => {
-        if (imageRef.current) {
-            gsap.fromTo(
-                imageRef.current,
-                { y: 0 },
-                {
-                    y: 60,
-                    scrollTrigger: {
-                        trigger: imageRef.current,
-                        start: "top bottom",
-                        scrub: 3,
-                    },
-                }
-            );
-        }
-
-        if (image2Ref.current) {
-            gsap.fromTo(
-                image2Ref.current,
-                { y: 0 },
-                {
-                    y: -60,
-                    scrollTrigger: {
-                        trigger: image2Ref.current,
-                        start: "top bottom",
-                        scrub: 3,
-                    },
-                }
-            );
-        }
-    }, []);
 
     return (
         <div
@@ -52,44 +18,38 @@ const Herosection = () => {
             }}
         >
             <div className="absolute  w-full h-full bg-black/40 z-10">
-
             </div>
-            <div className="space-y-12 relative z-45">
-                <h1 className="text-secondary" style={{ fontSize: "clamp(1rem, 4vw, 2rem)" }}>
-                    If You Can Imagine It, We Can Make It Happen
+            <div className="md:space-y-12 space-y-8 relative z-45">
+                <h1 className="text-secondary" style={{ fontSize: "clamp(.5rem, 4vw, 1.7rem)" }}>
+                    If You Can Imagine It We Can Make It Happen
                 </h1>
                 <h2
-                    className="text-transparent tracking-tight leading-20 bg-clip-text bg-gradient-to-r from-[#302276] via-[#D3D2DF] to-[#302276]"
-                    style={{ fontSize: "clamp(2rem, 6vw, 10rem)" }}
+                    className="text-transparent tracking-tight md:leading-25 bg-clip-text bg-gradient-to-r from-[#302276] via-[#D3D2DF] to-[#302276]"
+                    style={{ fontSize: "clamp(1.9rem, 6vw,7rem)" }}
                 >
-                    Digital Solutions That Make An Impact
+                    Transform Your NGO with a Dynamic Virtual Consultant!
                 </h2>
-                <button
-                    className="bg-gradient-to-r from-[#2438F9] to-[#D734D6] py-5 rounded-full text-white"
-                    style={{
-                        width: "clamp(300px, 30vw, 400px)",
-                        fontSize: "clamp(1rem, 1.5vw, 1.4rem)",
-                    }}
-                >
-                    Schedule Free Consultation
-                </button>
+                <div className="w-full grid place-items-center">
+                    <Button width="clamp(280px, 40vw, 500px)" />
+                </div>
                 <div className="lg:px-28 mt-20">
                     <Cards />
                 </div>
             </div>
-            <img
-                ref={imageRef}
-                src="/assets/icon.png"
-                alt=""
-                className="absolute z-10 top-[30vh] left-0 w-[20vw] md:block hidden object-cover"
-            />
-
-            <img
-                ref={image2Ref}
-                src="/assets/secondicon.png"
-                alt=""
-                className="absolute z-10 bottom-0 right-10 md:block hidden object-cover w-[20vw]"
-            />
+            <div>
+                {GsapParallax({
+                    src: "/assets/icon.png",
+                    alt: "Floating Image",
+                    className: "absolute z-45 top-[48vh] -left-10 w-[18vw] md:block hidden object-cover",
+                })}
+            </div>
+            <div>
+                {GsapParallax({
+                    src: "/assets/secondicon.png",
+                    alt: "Floating Image",
+                    className: "absolute z-10 bottom-0 right-10 md:block hidden object-cover w-[20vw]",
+                })}
+            </div>
         </div>
     );
 };

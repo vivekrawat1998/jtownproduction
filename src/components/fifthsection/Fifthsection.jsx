@@ -6,38 +6,51 @@ import "swiper/css";
 import "swiper/css/navigation";
 import CarouselCard from "../Carousal/Carousalcard"
 import FifthcarousalCards from "./FifthCarousalcard";
+import GsapParallax from "../ui/GsapParallax";
 
 const FifthSection = () => {
     const slides = [
         {
-            id: 1, image: "/assets/slider_01_home_02-1280x717.jpg",
-            Date: "Januvary 10, 2023",
-            text: "Innovate with Technology"
+            id: 1,
+            image: "/assets/education (2).webp",
+            title: "Quality Education",
+            description: "Empowering minds with knowledge and learning."
         },
         {
             id: 2,
-            Date: "Februray 12, 2025",
-            image: "/assets/slider_02_home_02-1280x717.jpg", text: "Transform Your Ideas"
+            image: "/assets/education.webp",
+            title: "Transforming Education",
+            description: "Bringing innovative learning methods to students."
         },
         {
             id: 3,
-            Date: "Februray 12, 2025",
-            image: "/assets/slider_03_home_02-1280x717.jpg", text: "Delivering Excellence"
+            image: "/assets/mangal grah.webp",
+            title: "Mangal Grah",
+            description: " Pandit Boking and Temnple Management website with payment gateway and admin panel."
         },
         {
             id: 4,
-            Date: "Februray 12, 2025",
-            image: "/assets/slider_01_home_02-1280x717.jpg", text: "Innovate with Technology"
+            image: "/assets/skill development.webp",
+            title: "Skill Development",
+            description: "Enhancing abilities and preparing for future opportunities."
         },
         {
             id: 5,
-            Date: "Februray 12, 2025",
-            image: "/assets/slider_02_home_02-1280x717.jpg", text: "Transform Your Ideas"
+            image: "/assets/women empowermnet.webp",
+            title: "Women Empowerment",
+            description: "Promoting equality and opportunities for women."
         },
         {
             id: 6,
-            Date: "Februray 12, 2025",
-            image: "/assets/slider_03_home_02-1280x717.jpg", text: "Delivering Excellence"
+            image: "/assets/world news.webp",
+            title: "Global News",
+            description: "Stay updated with the latest happenings around the world."
+        },
+        {
+            id: 7,
+            image: "/assets/agriculature.webp",
+            title: "Agriculture Innovation",
+            description: "Boosting farming efficiency with modern technology."
         },
     ];
 
@@ -46,32 +59,40 @@ const FifthSection = () => {
 
     return (
         <div
-            className="w-full bg-[#BD38A3] relative "
-            // style={{
-            //     backgroundImage: 'url("/assets/background_02_home_02.jpg")',
-            //     backgroundSize: "cover",
-            //     backgroundPosition: "center",
-            // }}
+            className="w-full bg-[#991c80] relative "
+        // style={{
+        //     backgroundImage: 'url("/assets/background_02_home_02.jpg")',
+        //     backgroundSize: "cover",
+        //     backgroundPosition: "center",
+        // }}
         >
 
-            <img src="/assets/background_02_home_02.jpg" alt="" className="absolute w-full h-full z-10 object-cover rounded-tr-[250px] rounded-bl-[250px]"/> 
+            <img src="/assets/background_02_home_02.jpg" alt="" className="absolute w-full h-full z-10 object-cover rounded-tr-[250px] rounded-bl-[250px]" />
             <div className="w-full relative z-45 md:px-30 px-5 p-10">
                 <div className="grid place-items-center w-full mt-10 space-y-3 text-center">
                     <h2 className="text-secondary" style={{ fontSize: "clamp(1rem, 4vw, 2rem)" }}>
-                        Stunning websites that convert visitors
+                        Websites that attract and convert visitors
                     </h2>
                     <h1
                         className="text-transparent leading-[1.2] bg-clip-text bg-gradient-to-r from-[#302276] via-[#D3D2DF] to-[#302276]"
-                        style={{ fontSize: "clamp(2rem, 6vw, 8rem)" }}
+                        style={{ fontSize: "clamp(2rem, 6vw, 7rem)" }}
                     >
-                        We Build Stunning Digital Experiences
+                        We Create Engaging Digital Experiences
                     </h1>
+                    {GsapParallax({
+                        src: "/assets/floating_image_05.png",
+                        alt: "/assets/floating_image_05.png",
+                        className: "absolute z-10 -top-1 -left-10 w-[25vw] md:block hidden object-cover",
+                    })}
                 </div>
                 <div className="mt-20 relative">
                     <Swiper
                         modules={[Navigation, Autoplay]}
-                        slidesPerView={3}
-                        spaceBetween={20}
+                        breakpoints={{
+                            320: { slidesPerView: 1, spaceBetween: 10 }, 
+                            768: { slidesPerView: 2, spaceBetween: 15 }, 
+                            1024: { slidesPerView: 3, spaceBetween: 20 },
+                        }}
                         loop={true}
                         autoplay={{ delay: 3000, disableOnInteraction: false }}
                         navigation={{
@@ -86,7 +107,7 @@ const FifthSection = () => {
                     >
                         {slides.map((slide) => (
                             <SwiperSlide key={slide.id}>
-                                <FifthcarousalCards image={slide.image} text={slide.text} Date={slide.Date} />
+                                <FifthcarousalCards image={slide.image} text={slide.title} Date={slide.description} />
                             </SwiperSlide>
                         ))}
                     </Swiper>
