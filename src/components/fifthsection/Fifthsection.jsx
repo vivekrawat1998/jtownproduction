@@ -12,39 +12,33 @@ const FifthSection = () => {
     const slides = [
         {
             id: 1,
-            image: "/assets/education (2).webp",
-            title: "Quality Education",
+            image: "/assets/caffe.png",
+            title: "Caffe Aroma - Premium Coffee Shop Experience",
             description: "Empowering minds with knowledge and learning."
         },
         {
             id: 2,
-            image: "/assets/education.webp",
-            title: "Transforming Education",
+            image: "/assets/clothinng.jpg",
+            title: "Clothing Ecommerce Store - Trendy & Sustainable Clothing",
             description: "Bringing innovative learning methods to students."
         },
         {
             id: 3,
-            image: "/assets/mangal grah.webp",
-            title: "Mangal Grah",
-            description: " Pandit Boking and Temnple Management website with payment gateway and admin panel."
+            image: "/assets/jwellery.avif",
+            title: "Elegant Jewelry store with Admin panel access",
+            description: "jewelery Management store  with Payment Gateway and Admin Panel."
         },
         {
             id: 4,
-            image: "/assets/skill development.webp",
-            title: "Skill Development",
-            description: "Enhancing abilities and preparing for future opportunities."
+            image: "/assets/travel-website-templates-1000x750.jpg",
+            title: "Travel Booking Platform`",
+            description: " Travel Booking Platform with Seamless Reservations."
         },
         {
             id: 5,
-            image: "/assets/women empowermnet.webp",
-            title: "Women Empowerment",
-            description: "Promoting equality and opportunities for women."
-        },
-        {
-            id: 6,
-            image: "/assets/world news.webp",
-            title: "Global News",
-            description: "Stay updated with the latest happenings around the world."
+            image: "/assets/hotelbooking.png",
+            title: "Hotel Booking Website",
+            description: "Find and book the perfect stay for your next trip."
         },
         {
             id: 7,
@@ -53,6 +47,7 @@ const FifthSection = () => {
             description: "Boosting farming efficiency with modern technology."
         },
     ];
+
 
     const [navPrev, setNavPrev] = useState(null);
     const [navNext, setNavNext] = useState(null);
@@ -89,8 +84,8 @@ const FifthSection = () => {
                     <Swiper
                         modules={[Navigation, Autoplay]}
                         breakpoints={{
-                            320: { slidesPerView: 1, spaceBetween: 10 }, 
-                            768: { slidesPerView: 2, spaceBetween: 15 }, 
+                            320: { slidesPerView: 1, spaceBetween: 10 },
+                            768: { slidesPerView: 2, spaceBetween: 15 },
                             1024: { slidesPerView: 3, spaceBetween: 20 },
                         }}
                         loop={true}

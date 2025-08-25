@@ -43,7 +43,7 @@ const Navbar = () => {
             data-aos="fade-down"
         >
             {/* Logo */}
-            <h1 className="text-[#c9f31d] text-2xl font-bold">Engoguru</h1>
+            <h1 className="text-[#c9f31d] text-2xl font-bold"></h1>
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex text-[#c9f31d] text-lg items-center space-x-10">

@@ -9,7 +9,7 @@
   --font-space: "Space Grotesk", sans-serif;
   --color-secondary: #91F001;
   --color-primary: #130365;
-  --color-third: #A21680;
+  --color-third: #FFE6B2;
 }
 
 @import "tailwindcss";
