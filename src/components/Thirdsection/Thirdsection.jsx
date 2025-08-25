@@ -30,7 +30,7 @@ const influencers = [
   },
   {
     id: 3,
-    name: "Meera Joshi",
+    name: "meera",
     username: "@meera.journeys",
     profilePic: "/assets/influencer_03.jpg",
     followers: 55000,
